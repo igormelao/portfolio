@@ -1,0 +1,2 @@
+class BookWork < ApplicationRecord
+end
