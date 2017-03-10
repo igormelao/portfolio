@@ -4,5 +4,5 @@
   <p><%= bookwork.title %></p>
   <p><%= bookwork.subtitle %></p>
   <p><%= bookwork.body %></p>
-  <%= image_tag bookwork.thumb_image %>
+  <%= image_tag bookwork.thumb_image unless bookwork.thumb_image.nil? %>
 <% end %>
