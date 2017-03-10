@@ -1,4 +1,6 @@
 class BookWorksController < ApplicationController
+  before_action :set_bookwork, only: [:show, :edit, :update]
+
   def index
     @bookWorks = BookWork.all
   end
@@ -16,13 +18,27 @@ class BookWorksController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @bookwork.update(bookwork_params)
+      redirect_to book_works_path, notice: "Your bookwork was updated with sucessfully"
+    else
+      render :edit
+    end
+  end
+
   def show
-    @bookwork = BookWork.find(params[:id])
   end
 
   private
 
-  def bookwork_params
-    params.require(:book_work).permit(:title, :subtitle, :body)
-  end
+    def set_bookwork
+      @bookwork = BookWork.find(params[:id])
+    end
+
+    def bookwork_params
+      params.require(:book_work).permit(:title, :subtitle, :body)
+    end
 end
