@@ -1,19 +1,11 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @bookwork.title %>
-</p>
+<%= image_tag @bookwork.main_image %>
 
-<p>
-  <strong>Subtitle:</strong>
-  <%= @bookwork.subtitle %>
-</p>
+<h1><%= @bookwork.title %></h1>
 
-<p>
-  <strong>Body:</strong>
-  <%= @bookwork.body %>
-</p>
+<em><%= @bookwork.subtitle %></em>
+
+<p><%= @bookwork.body %></p>
 
 <%= link_to 'Edit', edit_book_work_path(@bookwork) %> |
 <%= link_to 'Back', book_works_path %>
