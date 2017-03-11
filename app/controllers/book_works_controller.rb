@@ -1,5 +1,5 @@
 class BookWorksController < ApplicationController
-  before_action :set_bookwork, only: [:show, :edit, :update]
+  before_action :set_bookwork, only: [:show, :edit, :update, :destroy]
 
   def index
     @bookWorks = BookWork.all
@@ -12,7 +12,7 @@ class BookWorksController < ApplicationController
   def create
     @bookwork = BookWork.new(bookwork_params)
     if @bookwork.save
-      redirect_to book_works_path, notice: "Your bookwork was created with sucessfully"
+      redirect_to book_works_path, notice: "Your bookwork item was created with sucessfully"
     else
       render :new
     end
@@ -23,13 +23,18 @@ class BookWorksController < ApplicationController
 
   def update
     if @bookwork.update(bookwork_params)
-      redirect_to book_works_path, notice: "Your bookwork was updated with sucessfully"
+      redirect_to book_works_path, notice: "Your bookwork item was updated with sucessfully"
     else
       render :edit
     end
   end
 
   def show
+  end
+
+  def destroy
+    @bookwork.destroy
+    redirect_to book_works_path, notice: "Your bookwork item was destroyed sucessfully"
   end
 
   private

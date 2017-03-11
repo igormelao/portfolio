@@ -8,4 +8,5 @@
   <p><%= bookwork.body %></p>
   <%= image_tag bookwork.thumb_image unless bookwork.thumb_image.nil? %>
   <%= link_to "Edit", edit_book_work_path(bookwork) %>
+  <%= link_to "Delete", bookwork, method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
