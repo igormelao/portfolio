@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
-  resources :book_works
+  resources :book_works, except: [:show]
+
+  get 'book_work/:id', to: 'book_works#show', as: 'book_work_show'
   
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#about'

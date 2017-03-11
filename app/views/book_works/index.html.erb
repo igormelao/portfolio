@@ -3,7 +3,7 @@
 <%= link_to "Create New Item", new_book_work_path %>
 
 <% @bookWorks.each do |bookwork|%>
-  <p><%= link_to bookwork.title, book_work_path(bookwork) %></p>
+  <p><%= link_to bookwork.title, book_work_show_path(bookwork) %></p>
   <p><%= bookwork.subtitle %></p>
   <p><%= bookwork.body %></p>
   <%= image_tag bookwork.thumb_image unless bookwork.thumb_image.nil? %>
