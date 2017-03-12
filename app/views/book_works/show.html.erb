@@ -1,0 +1,11 @@
+
+<%= image_tag @bookwork.main_image %>
+
+<h1><%= @bookwork.title %></h1>
+
+<em><%= @bookwork.subtitle %></em>
+
+<p><%= @bookwork.body %></p>
+
+<%= link_to 'Edit', edit_book_work_path(@bookwork) %> |
+<%= link_to 'Back', book_works_path %>
