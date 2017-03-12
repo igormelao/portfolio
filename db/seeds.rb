@@ -43,6 +43,12 @@ BookWork.create!(
   thumb_image: "http://placehold.it/350x200"
 )
  
-
-
 puts "9 bookwork created"
+
+3.times do | technology |
+  BookWork.last.technologies.create!(
+    name: "Technology #{technology}"
+  )
+end
+
+puts "3 Technologies created"
