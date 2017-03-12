@@ -7,6 +7,7 @@ class BookWorksController < ApplicationController
 
   def new
     @bookwork = BookWork.new
+    3.times { @bookwork.technologies.build }
   end
 
   def create
@@ -44,6 +45,6 @@ class BookWorksController < ApplicationController
     end
 
     def bookwork_params
-      params.require(:book_work).permit(:title, :subtitle, :body)
+      params.require(:book_work).permit(:title, :subtitle, :body, technologies_attributes: [:name])
     end
 end
