@@ -45,6 +45,10 @@ class BookWorksController < ApplicationController
     end
 
     def bookwork_params
-      params.require(:book_work).permit(:title, :subtitle, :body, technologies_attributes: [:name])
+      params.require(:book_work).permit(:title, 
+                                        :subtitle, 
+                                        :body, 
+                                        technologies_attributes: [:name]
+                                        )
     end
 end
