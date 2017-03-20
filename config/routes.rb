@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'book_work/:id', to: 'book_works#show', as: 'book_work_show'
   
   get 'about', to: 'pages#about'
-  get 'contact', to: 'pages#about'
+  get 'contact', to: 'pages#contact'
 
   resources :blogs do
     member do
