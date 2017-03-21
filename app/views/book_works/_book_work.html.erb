@@ -1,0 +1,9 @@
+<p><%= link_to book_work.title, book_work_show_path(book_work) %></p>
+
+<p><%= book_work.subtitle %></p>
+
+<p><%= book_work.body %></p>
+
+<%= image_tag book_work.thumb_image unless book_work.thumb_image.nil? %>
+<%= link_to "Edit", edit_book_work_path(book_work) %>
+<%= link_to "Delete", book_work, method: :delete, data: { confirm: "Are you sure?" } %>

@@ -3,7 +3,7 @@ class BookWorksController < ApplicationController
   layout 'bookwork'
   
   def index
-    @bookWorks = BookWork.all
+    @book_works = BookWork.all
   end
 
   def new
