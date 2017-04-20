@@ -1,7 +1,7 @@
 class BookWorksController < ApplicationController
   before_action :set_bookwork, only: [:show, :edit, :update, :destroy]
   layout 'bookwork'
-  
+
   def index
     @book_works = BookWork.all
   end
@@ -46,9 +46,9 @@ class BookWorksController < ApplicationController
     end
 
     def bookwork_params
-      params.require(:book_work).permit(:title, 
-                                        :subtitle, 
-                                        :body, 
+      params.require(:book_work).permit(:title,
+                                        :subtitle,
+                                        :body,
                                         technologies_attributes: [:name]
                                         )
     end
