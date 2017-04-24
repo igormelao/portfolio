@@ -1,5 +1,5 @@
 <h1>Bookwork</h1>
 
-<%= link_to "Create New Item", new_book_work_path %>
+<%= link_to "Create New Item", new_book_work_path if logged_in?(:site_admin) %>
 
 <%= render @book_works %>

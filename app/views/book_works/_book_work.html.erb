@@ -5,5 +5,5 @@
 <p><%= book_work.body %></p>
 
 <%= image_tag book_work.thumb_image unless book_work.thumb_image.nil? %>
-<%= link_to "Edit", edit_book_work_path(book_work) %>
-<%= link_to "Delete", book_work, method: :delete, data: { confirm: "Are you sure?" } %>
+<%= link_to "Edit", edit_book_work_path(book_work) if logged_in?(:site_admin)  %>
+<%= link_to "Delete", book_work, method: :delete, data: { confirm: "Are you sure?" } if logged_in?(:site_admin) %>

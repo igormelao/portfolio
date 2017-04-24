@@ -1,7 +1,7 @@
 class BookWorksController < ApplicationController
   before_action :set_bookwork, only: [:show, :edit, :update, :destroy]
   layout 'bookwork'
-
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
   def index
     @book_works = BookWork.all
   end

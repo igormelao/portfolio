@@ -12,5 +12,5 @@
   <p><%= technology.name %></p>
 <% end %>
 
-<%= link_to 'Edit', edit_book_work_path(@bookwork) %> |
+<%= link_to 'Edit', edit_book_work_path(@bookwork) if logged_in?(:site_admin) %> |
 <%= link_to 'Back', book_works_path %>
